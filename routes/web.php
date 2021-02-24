@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PokemonController;
+use App\Models\Pokemon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,8 @@ Route::view('javascript', 'pokemon-javascript');
 // the livewire way
 // searching pokemon
 // adding cuteness
-Route::view('livewire', 'pokemon-livewire');
+Route::get('livewire', function () {
+    $allPokemon = Pokemon::all();
+
+    return view('pokemon-livewire', ['allPokemon' => $allPokemon]);
+});

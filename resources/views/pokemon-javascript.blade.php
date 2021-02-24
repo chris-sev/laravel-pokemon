@@ -12,7 +12,9 @@
 <body>
 
   <div id="app">
+    <input type="text" v-model="message" />
     <div>@{{ message }}</div>
+
     <div v-if="allPokemon">
       <div v-for="pokemon in allPokemon" :key="pokemon.id">
         <h2>@{{ pokemon.name }}</h2>

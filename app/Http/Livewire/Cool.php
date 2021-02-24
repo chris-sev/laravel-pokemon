@@ -4,12 +4,12 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class Cuteness extends Component
+class Cool extends Component
 {
-    public $cuteness;
+    public $name = 'chris';
 
     public function render()
     {
-        return view('livewire.cuteness');
+        return view('livewire.cool');
     }
 }
