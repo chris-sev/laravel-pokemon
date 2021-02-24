@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PokemonController;
+use App\Http\Controllers\API\PokemonAPIController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::apiResource('pokemon', PokemonController::class);
+Route::apiResource('pokemon', PokemonAPIController::class);

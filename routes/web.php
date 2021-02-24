@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
+Route::view('/', 'welcome');
+
 // the laravel way
 Route::resource('pokemon', PokemonController::class);
 
 // the javascript way
-Route::view('pokemon-javascript', )
+Route::view('javascript', 'pokemon-javascript');
+
+// the livewire way

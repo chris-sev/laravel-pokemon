@@ -17,7 +17,6 @@ class CreatePokemonTable extends Migration
             $table->id();
 
             $table->string('name')->nullable();
-            $table->string('color')->nullable();
             $table->string('image')->nullable();
             $table->integer('cuteness')->default(0);
 

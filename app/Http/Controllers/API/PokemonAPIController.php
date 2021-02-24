@@ -1,32 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
 
-class PokemonController extends Controller
+class PokemonAPIController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $allPokemon = Pokemon::all();
-        return view('pokemon-laravel', ['allPokemon' => $allPokemon]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Pokemon::all();
     }
 
     /**
@@ -48,18 +38,7 @@ class PokemonController extends Controller
      */
     public function show(Pokemon $pokemon)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Pokemon  $pokemon
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Pokemon $pokemon)
-    {
-        //
+        return $pokemon;
     }
 
     /**
@@ -71,8 +50,8 @@ class PokemonController extends Controller
      */
     public function update(Request $request, Pokemon $pokemon)
     {
-        $pokemon->increment('cuteness');
-        return redirect('/pokemon');
+        $pokemon->update($request->all());
+        return $pokemon;
     }
 
     /**
@@ -83,6 +62,6 @@ class PokemonController extends Controller
      */
     public function destroy(Pokemon $pokemon)
     {
-        //
+        return $pokemon->delete();
     }
 }

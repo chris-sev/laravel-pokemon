@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pokemon extends Model
 {
     use HasFactory;
+
+    public $fillable = [
+        'name',
+        'image',
+        'cuteness',
+    ];
 }
