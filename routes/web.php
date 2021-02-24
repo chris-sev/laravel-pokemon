@@ -28,6 +28,5 @@ Route::view('javascript', 'pokemon-javascript');
 // adding cuteness
 Route::get('livewire', function () {
     $allPokemon = Pokemon::all();
-
     return view('pokemon-livewire', ['allPokemon' => $allPokemon]);
 });
