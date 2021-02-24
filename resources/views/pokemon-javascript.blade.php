@@ -11,29 +11,36 @@
 </head>
 <body>
 
-  <div id="app"></div>
+  <div id="app">
+    <div>@{{ message }}</div>
+    <div v-if="allPokemon">
+      <div v-for="pokemon in allPokemon" :key="pokemon.id">
+        <h2>@{{ pokemon.name }}</h2>
+        <img :src="pokemon.image" />
+      </div>
+    </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script>
-    const app = document.getElementById('app');
+    const app = new Vue({
+      el: '#app'
+      , data: {
+        allPokemon: null
+        , message: 'hello'
+      }
+      , mounted() {
+        this.getPokemon();
+      }
+      , methods: {
+        getPokemon() {
+          fetch('/api/pokemon')
+            .then(res => res.json())
+            .then(data => this.allPokemon = data);
+        }
 
-    getPokemon();
-
-    // get all pokemon and inject into app
-    function getPokemon() {
-      fetch('/api/pokemon')
-        .then(res => res.json())
-        .then(data => {
-          data.forEach((pokemon) => {
-            const el = document.createElement('div');
-            el.innerHTML = `
-                    <img src="${pokemon.image}" />
-                    <p>${pokemon.cuteness} Cuteness</p>
-              `;
-
-            app.appendChild(el);
-          })
-        });
-    }
+      }
+    })
 
   </script>
 
