@@ -22,6 +22,7 @@ Route::resource('pokemon', PokemonController::class);
 // the javascript way
 Route::view('javascript', 'pokemon-javascript');
 
-// the livewire way (searching pokemon)
-
-// the livewire way (adding cuteness to a pokemon)
+// the livewire way
+// searching pokemon
+// adding cuteness
+Route::view('livewire', 'pokemon-livewire');
