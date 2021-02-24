@@ -9,17 +9,7 @@ class ShowPokemon extends Component
 {
     public Pokemon $pokemon;
 
-    protected $rules = [
-        'pokemon.name' => 'required|string'
-    ];
-
-    public function updateName()
-    {
-        $this->pokemon->save();
-    }
-
-    public function incrementCuteness()
-    {
+    public function incrementCuteness() {
         $this->pokemon->increment('cuteness');
     }
 

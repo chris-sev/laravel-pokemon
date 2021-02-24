@@ -24,8 +24,6 @@ Route::resource('pokemon', PokemonController::class);
 Route::view('javascript', 'pokemon-javascript');
 
 // the livewire way
-// searching pokemon
-// adding cuteness
 Route::get('livewire', function () {
     $allPokemon = Pokemon::all();
     return view('pokemon-livewire', ['allPokemon' => $allPokemon]);

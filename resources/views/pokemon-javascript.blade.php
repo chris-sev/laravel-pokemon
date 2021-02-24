@@ -9,17 +9,12 @@
   <!-- tailwind -->
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center">
 
   <div id="app">
-    <input type="text" v-model="message" />
-    <div>@{{ message }}</div>
-
-    <div v-if="allPokemon">
-      <div v-for="pokemon in allPokemon" :key="pokemon.id">
-        <h2>@{{ pokemon.name }}</h2>
-        <img :src="pokemon.image" />
-      </div>
+    <div v-for="pokemon in allPokemon" :key="pokemon.id">
+      @{{ pokemon.name }}
+      <img :src="pokemon.image" class="w-10" />
     </div>
   </div>
 
@@ -28,11 +23,7 @@
     const app = new Vue({
       el: '#app'
       , data: {
-        allPokemon: null
-        , message: 'hello'
-      }
-      , mounted() {
-        this.getPokemon();
+        allPokemon: []
       }
       , methods: {
         getPokemon() {
@@ -40,7 +31,9 @@
             .then(res => res.json())
             .then(data => this.allPokemon = data);
         }
-
+      }
+      , mounted() {
+        this.getPokemon();
       }
     })
 

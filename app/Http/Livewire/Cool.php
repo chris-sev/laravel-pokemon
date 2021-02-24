@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Cool extends Component
 {
-    public $name = 'chris';
+    public $message = 'super cool';
 
     public function render()
     {

@@ -11,14 +11,15 @@
 
   @livewireStyles
 </head>
-<body class="min-h-screen flex items-center justify-center">
+<body class="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center">
 
   {{-- <livewire:cool /> --}}
-  {{-- @livewire('search-pokemon') --}}
+  {{-- <livewire:search-pokemon /> --}}
   @foreach ($allPokemon as $pokemon)
-  <livewire:show-pokemon :pokemon="$pokemon" :key="$pokemon->id">
-    @endforeach
+  <livewire:show-pokemon :pokemon="$pokemon" :key="$pokemon->id" />
+  @endforeach
 
-    @livewireScripts
+  @livewireScripts
+
 </body>
 </html>

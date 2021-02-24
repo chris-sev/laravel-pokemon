@@ -11,7 +11,6 @@ class PokemonAPIController extends Controller
     /**
      * Display a listing of the resource.
      *
-
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -38,7 +37,7 @@ class PokemonAPIController extends Controller
      */
     public function show(Pokemon $pokemon)
     {
-        return $pokemon;
+        //
     }
 
     /**
@@ -50,8 +49,7 @@ class PokemonAPIController extends Controller
      */
     public function update(Request $request, Pokemon $pokemon)
     {
-        $pokemon->update($request->all());
-        return $pokemon;
+        //
     }
 
     /**
@@ -62,6 +60,6 @@ class PokemonAPIController extends Controller
      */
     public function destroy(Pokemon $pokemon)
     {
-        return $pokemon->delete();
+        //
     }
 }

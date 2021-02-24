@@ -1,12 +1,8 @@
 <div>
-  {{-- If your happiness depends on money, you will never be happy with yourself. --}}
-  <form wire:submit.prevent="updateName">
-    <input wire:model="pokemon.name" type="text" />hi
-    <button>Update Name</button>
-  </form>
-  <img src="{{ $pokemon->image }}" class="w-20" />
+  {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day --}}
 
-  <p>{{ $pokemon->cuteness }} cuteness</p>
+  <h2>{{ $pokemon->name }}</h2>
+  <p>{{ $pokemon->cuteness }}</p>
 
-  <button wire:click="incrementCuteness">Vote</button>
+  <button wire:click="incrementCuteness" class="p-3 bg-blue-400 text-blue-50">Vote Up</button>
 </div>

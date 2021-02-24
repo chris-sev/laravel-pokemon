@@ -1,9 +1,9 @@
 <div>
-  <input type="text" wire:model="query" class="border border-gray-400 p-2" />
+  {{-- In work, do what you enjoy. --}}
+  <input type="text" wire:model="query" />
 
-  {{-- If your happiness depends on money, you will never be happy with yourself. --}}
   @foreach ($allPokemon as $pokemon)
   <h2>{{ $pokemon->name }}</h2>
-  <img src="{{ $pokemon->image }}" class="w-20" />
+  <img src="{{ $pokemon->image }}" class="w-10" />
   @endforeach
 </div>
